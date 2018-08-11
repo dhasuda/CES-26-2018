@@ -1,6 +1,6 @@
 # Bizuário
 
-##Getting Started
+## Getting Started
 
 After clonin this project, use the command:
   ```
