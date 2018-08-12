@@ -9,3 +9,22 @@ node_modules/
 # Mongo
 mongo/
 data/
+
+app/WiredTiger
+app/WiredTiger.lock
+app/WiredTiger.turtle
+app/WiredTiger.wt
+app/WiredTigerLAS.wt
+app/_mdb_catalog.wt
+app/collection-0-8624924975978718335.wt
+app/collection-2-8624924975978718335.wt
+app/collection-4-8624924975978718335.wt
+app/diagnostic.data/
+app/index-1-8624924975978718335.wt
+app/index-3-8624924975978718335.wt
+app/index-5-8624924975978718335.wt
+app/index-6-8624924975978718335.wt
+app/journal/
+app/mongod.lock
+app/sizeStorer.wt
+app/storage.bson
