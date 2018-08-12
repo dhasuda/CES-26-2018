@@ -23,7 +23,7 @@ After that, unzip the file and create, inside the app folder another directory, 
   ```
 Once you have everything you need to start the database, let's connect it. Go to the mongo folder you just downloaded, and enter the bin folder using the terminal. From there you have to run:
   ```
-  ./mongod --dpath PATH/CES-26-2018/app/data
+  ./mongod --dbpath PATH/CES-26-2018/app/data
   ```
   
   After that, the server for the database will start. In another terminal window you can test your connections by going to the same bin folder and running
