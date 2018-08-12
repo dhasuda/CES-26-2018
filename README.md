@@ -2,16 +2,24 @@
 
 ## Getting Started
 
+First you have to install node and npm.
 After clonin this project, use the command:
   ```
   npm install
   ```
 to install all dependencies
 
+Before you can run the app, you have to set MongoDB. Just follow "Setting MongoDB" below.
 To run the app run:
   ```
   node app.js
   ```
+Or you can run the commando: 
+  ```
+  npm run server
+  ```
+That will restart the server everytime you modify or save any file.
+
 After that, you can go to localhost:3000 to see the project in action
 
 ## Setting MongoDB
@@ -30,3 +38,15 @@ Once you have everything you need to start the database, let's connect it. Go to
   ```
   ./mongo
   ```
+
+## Running the React Native project
+
+This is the part of the project that corresponds to the mobile app itself. It's contained into the Bizuario folder. First go to the Bizuario folder via terminal:
+  ```
+  cd Bizuario
+  ```
+And then run:
+  ```
+  npm start
+  ```
+To see the result in your smartphone visit the Expo website: https://expo.io
