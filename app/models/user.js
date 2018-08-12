@@ -1,10 +1,8 @@
 const db = require('./db')
 
-var User = data => {
+var User = function(data) {
   this.data = data
 }
-
-User.prototype.data = {}
 
 User.prototype.save = (onSuccess, onError) => {
 
@@ -22,4 +20,4 @@ User.prototype.save = (onSuccess, onError) => {
 
 }
 
-module.exports User
+module.exports = User
