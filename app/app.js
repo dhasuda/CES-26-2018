@@ -1,11 +1,18 @@
 const express = require('express')
 const app = express()
 
+const bodyParser = require('body-parser')
+
 const passport = require('passport')
+
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 
 require('./passport/passport.js') (passport)
 app.use(passport.initialize())
 app.use(passport.session())
+
+app.set('views', './views')
 
 const rootRoute = require('./routes/rootRoute')
 
