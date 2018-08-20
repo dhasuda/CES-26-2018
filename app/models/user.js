@@ -47,22 +47,22 @@ User.prototype.save = (onSuccess, onError) => {
 User.findByUsername = (username, onSuccess, onError) => {
 
   MongoClient.connect(url, function(err, db) {
-  if (err) {
-    onError(err)
-  }
-  var dbo = db.db("nodeData")
-  dbo.collection("users").find({}, { username: username }).toArray(function(err, result) {
-
     if (err) {
       onError(err)
-    } else {
-      console.log(result.name)
-      db.close()
-      onSuccess(result)
     }
+    var dbo = db.db("nodeData")
+    dbo.collection("users").find({}, { username: username }).toArray(function(err, result) {
 
+      if (err) {
+        onError(err)
+      } else {
+        console.log(result.name)
+        db.close()
+        onSuccess(result)
+      }
+
+    });
   });
-});
 
 }
 
