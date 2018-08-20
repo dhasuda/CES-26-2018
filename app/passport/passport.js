@@ -10,6 +10,12 @@ module.exports = function(passport) {
       passwordField: 'password'
     }, newUserCallback ))
 
+    passport.use('user', new LocalStrategy(
+      {
+        usernameField: 'username',
+        passwordField: 'password'
+      }, loginCallback ))
+
 }
 
 function newUserCallback(req, username, password, done) {
@@ -32,4 +38,18 @@ function newUserCallback(req, username, password, done) {
 
 function generateHash(rawString) {
   return bCrypt.hashSync(rawString)
+}
+
+function loginCallback(req, username, password, done) {
+
+  User.findByUsername(username, result => {
+    if bCrypt.compareSync(password, result.password) {
+      done (null, result)
+    } else {
+      done(null)
+    }
+  }, err => {
+    done(err)
+  })
+
 }
