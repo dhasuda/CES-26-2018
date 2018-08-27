@@ -18,14 +18,21 @@ exports.registerPage = (req, res) => {
   res.render('register.ejs')
 }
 
+exports.renderWelcomePage = (req, res) => {
+  console.log(req.user)
+  res.render('welcome.ejs', {user: req.user})
+}
+
 exports.loginUser = (req, res, next) => {
 
   passport.authenticate('user', (err, user, info) => {
     if (err) { return res.send('banco'); }
         if (!user) { return res.send('info'); }
         req.login(user, (err) => {
+          console.log('2')
           if (err) { return next(err); }
-          return res.send('aluno')
+          console.log('here')
+          return next()
         })
     })(req, res, next);
 

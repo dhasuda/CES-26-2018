@@ -10,7 +10,6 @@ module.exports = function(passport) {
       passwordField: 'password',
       passReqToCallback : true
     }, (req, username, password, done) => {
-      console.log('HERE')
 
       var data = {
         username: username,

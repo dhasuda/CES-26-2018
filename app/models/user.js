@@ -26,13 +26,13 @@ User.save = (data, onSuccess, onError) => {
 }
 
 User.findByUsername = (username, onSuccess, onError) => {
-
   MongoClient.connect(url, function(err, db) {
     if (err) {
       onError(err)
     }
     var dbo = db.db("nodeData")
-    dbo.collection("users").find({}, { username: username }).toArray(function(err, result) {
+    var query = { username: username }
+    dbo.collection("users").find(query).toArray(function(err, result) {
       if (err) {
         onError(err)
       } else {

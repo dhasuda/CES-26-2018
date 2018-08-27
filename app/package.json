@@ -4,7 +4,7 @@
   "description": "Repository of bizus",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "server": "nodemon app.js"
   },
   "author": "",
@@ -12,11 +12,14 @@
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
+    "chai": "^4.1.2",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
+    "mocha": "^5.2.0",
     "mongodb": "^3.1.3",
     "mongoose": "^5.2.7",
     "passport": "^0.4.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "should": "^13.2.3"
   }
 }
