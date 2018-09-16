@@ -7,16 +7,17 @@
 <body>
   <h1>All time Top Bizus:</h1>
   
-  <p><%=arrayBizus%></p>
   <ul>
    <% arrayBizus.forEach (bizu => { %>
       <li>
         <h3>Title: <%= bizu.title %></h3>
         <h3>Subject: <%= bizu.subject %></h3>
-        <h3>Creator: <%= bizu.creator %></h3> 
-        <h3>Content:</h3><br>
+        <!-- <h3>Creator: <%= bizu.creator %></h3> --> 
+        <h3>Content:</h3>
         <h4><%= bizu.text %></h4> 
+        <button type="button" onclick="location.href = '/rankbizu/<%= bizu._id %>'" >Rank this Bizu!</button>
       </li>  
+
     <% } ) %>
   </ul>
   <script scr="public/infinitescroll.js"></script>

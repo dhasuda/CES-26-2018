@@ -1,5 +1,7 @@
 const passport = require('passport')
 var Bizu = require("../models/bizu")
+var Rank = require("../models/rank")
+
 
 exports.firstPage = (req, res) => {
   // res.send('Hello, world')
@@ -43,6 +45,11 @@ exports.renderRanking = (req, res) => {
   })
 }
 
+exports.renderRankScreen = (req, res) => {
+  console.log(req.user)
+  res.render('rankScreen.ejs', {idBizu : req.params.idBizu})
+}
+
 exports.renderUpload = (req, res) => {
   console.log(req.user)
   res.render('uploadbizu.ejs')
@@ -63,7 +70,22 @@ exports.postBizu = (req, res) => {
     console.log(err)
     res.redirect('/')
   })
+}
+
+exports.postRank = (req, res) => {
   
+  var data = {
+    idBizu: req.params.idBizu,
+    user: req.user._id,
+    grade: req.body.stars
+  }
+  
+  Rank.save(data, () => {
+    res.redirect('/ranking')
+  }, err => {
+    console.log(err)
+    res.redirect('/')
+  }) 
 }
 
 exports.loginUser = (req, res, next) => {

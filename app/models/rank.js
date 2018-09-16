@@ -5,7 +5,7 @@ var Rank = (data) => {
     this.data = data
 }
 
-Rank.prototype.save = (data, onSuccess, onError) => {
+Rank.save = (data, onSuccess, onError) => {
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("nodeData");

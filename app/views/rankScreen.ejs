@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<head>
+</head>
+
+<body>
+    <h2>How many stars bizu <%=idBizu%> deserve?</h2>
+    <form action="/postrank/<%=idBizu%>" method="post">
+        <input type="radio" name="stars" value=1> 1<br>
+        <input type="radio" name="stars" value=2> 2<br>
+        <input type="radio" name="stars" value=3 checked> 3<br>
+        <input type="radio" name="stars" value=4> 4<br>
+        <input type="radio" name="stars" value=5> 5<br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
