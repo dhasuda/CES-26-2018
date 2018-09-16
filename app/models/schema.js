@@ -7,12 +7,12 @@ var schema = {
     },
 
     bizu: {
-        id: Number,
         title: String,
         text: String,
         subject: String,
         creator: String
     },
+    
     rank: {
         idBizu: Number,
         user: String,

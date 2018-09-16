@@ -12,7 +12,7 @@ Bizu.prototype.save = (onSuccess, onError) => {
         if (err) throw err;
         var dbo = db.db("nodeData");
     
-        dbo.collection("bizus").insertOne(data, function(err, res) {
+        dbo.collection("bizus").insertOne(this.data, function(err, res) {
           if (err) {
             onError(err)
           } else {
@@ -22,4 +22,17 @@ Bizu.prototype.save = (onSuccess, onError) => {
           }
         })
       })
+}
+
+Bizu.getAll = (onSuccess, onError) => {
+    if (err) throw err;
+  var dbo = db.db("mydb");
+  dbo.collection("customers").find({}).toArray(function(err, result) {
+    if (err) {
+        onError(err)
+    }
+    console.log(result);
+    onSuccess(result)
+    db.close();
+  });
 }
