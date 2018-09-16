@@ -7,7 +7,7 @@ MongoClient.connect(url, function(err, db) {
   if (err) {
     throw err
 }
-var dbo = db.db("mydb");
+var dbo = db.db("nodeData");
 
 dbo.collection("bizus").aggregate([
     { $lookup:
