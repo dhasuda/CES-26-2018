@@ -1,19 +1,25 @@
 var MongoClient = require('mongodb').MongoClient
 var url = "mongodb://localhost:27017/"
 
-var Bizu = (data) => {
+var Bizu = function(data) {
     this.data = data
 }
 
-Bizu.prototype.data = {}
+Bizu.prototype = {
+    data: {}
+}
 
 Bizu.prototype.save = (onSuccess, onError) => {
+    console.log('1')
     MongoClient.connect(url, function(err, db) {
+        console.log('2')
         if (err) throw err;
         var dbo = db.db("nodeData");
-    
+        console.log('3')
         dbo.collection("bizus").insertOne(this.data, function(err, res) {
+        console.log('DATA', this.data)
           if (err) {
+            console.log('4')
             onError(err)
             throw err
           } else {
@@ -103,3 +109,5 @@ Bizu.getAllWithRanks = (onSuccess, onError) => {
         db.close()
     })
 }
+
+module.exports = Bizu

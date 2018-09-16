@@ -41,17 +41,18 @@ exports.renderUpload = (req, res) => {
 }
 
 exports.postBizu = (req, res) => {
-  console.log(req.user)
+  
   var bizu = new Bizu()
+  console.log('USER', req.user)
   bizu.data = {
     title: req.body.title,
-    text: String,
-    subject: String,
-    creator: String
+    text: req.body.text,
+    subject: req.body.subject,
+    creator: req.user._id
   }
 
   bizu.save(() => {
-    
+    res.render('uploadbizu.ejs')
   }, err => {
     console.log(err)
     res.redirect('/')
@@ -65,9 +66,7 @@ exports.loginUser = (req, res, next) => {
     if (err) { return res.send('banco'); }
         if (!user) { return res.send('info'); }
         req.login(user, (err) => {
-          console.log('2')
           if (err) { return next(err); }
-          console.log('here')
           return next()
         })
     })(req, res, next);

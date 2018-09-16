@@ -5,7 +5,9 @@ var Rank = (data) => {
     this.data = data
 }
 
-Rank.prototype.data = {}
+Rank.prototype = {
+    data: {}
+}
 
 Rank.prototype.save = (onSuccess, onError) => {
     MongoClient.connect(url, function(err, db) {
@@ -24,3 +26,5 @@ Rank.prototype.save = (onSuccess, onError) => {
         })
       })
 }
+
+module.exports = Rank
