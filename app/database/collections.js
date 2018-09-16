@@ -9,4 +9,11 @@ MongoClient.connect(url, function(err, db) {
     console.log("Collection created!");
     db.close();
   });
+
+  dbo.createCollection("bizus", function(err, res) {
+    if (err) throw err;
+    console.log("Bizus created!");
+    db.close();
+  });
+
 });
