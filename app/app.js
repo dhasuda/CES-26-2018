@@ -7,6 +7,8 @@ const bodyParser = require('body-parser')
 
 const passport = require('passport')
 
+app.use(express.static('views'));
+
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 

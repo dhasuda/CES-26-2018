@@ -1,0 +1,9 @@
+{
+  "name": "CES-26-2018",
+  "short_name": "CES-26-2018",
+  "theme_color": "#ffde00",
+  "background_color": "#200bcb",
+  "display": "browser",
+  "scope": "/",
+  "start_url": "/"
+}
