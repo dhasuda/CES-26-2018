@@ -112,3 +112,10 @@ exports.registerNewUser = (req, res, next) => {
         })
     })(req, res, next);
 }
+
+exports.logout = (req, res) => {
+  req.logout()
+  req.session.destroy(err => {
+      res.redirect('/')
+  })
+}
