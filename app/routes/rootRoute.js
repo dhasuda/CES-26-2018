@@ -11,7 +11,7 @@ router.get('/database', rootController.database)
 router.get('/aboutus', rootController.renderAboutUs)
 router.get('/ranking', rootController.renderRanking)
 router.get('/uploadbizu', rootController.renderUpload)
-
+router.get('/welcome', rootController.renderWelcomePage)
 
 router.post('/login', rootController.loginUser)
 router.post('/login', rootController.renderWelcomePage)

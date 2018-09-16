@@ -1,0 +1,20 @@
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 250px;
+    height: 250px;
+    padding-top: 0;
+}
+
+.nav-item {
+    font-size: 100px;
+}
+
+.navbar-toggler {
+    height: 150px;
+    width: 150px;
+}
+
+.navbar-toggler-icon {
+    height: 100px;
+    width: 100px;   
+}
