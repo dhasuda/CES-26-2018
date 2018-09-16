@@ -42,16 +42,14 @@ exports.renderUpload = (req, res) => {
 
 exports.postBizu = (req, res) => {
   
-  var bizu = new Bizu()
-  console.log('USER', req.user)
-  bizu.data = {
+  var data = {
     title: req.body.title,
     text: req.body.text,
     subject: req.body.subject,
     creator: req.user._id
   }
-
-  bizu.save(() => {
+  
+  Bizu.save(data, () => {
     res.render('uploadbizu.ejs')
   }, err => {
     console.log(err)

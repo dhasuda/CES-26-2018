@@ -5,18 +5,14 @@ var Bizu = function(data) {
     this.data = data
 }
 
-Bizu.prototype = {
-    data: {}
-}
-
-Bizu.prototype.save = (onSuccess, onError) => {
+Bizu.save = (data, onSuccess, onError) => {
     console.log('1')
     MongoClient.connect(url, function(err, db) {
         console.log('2')
         if (err) throw err;
         var dbo = db.db("nodeData");
         console.log('3')
-        dbo.collection("bizus").insertOne(this.data, function(err, res) {
+        dbo.collection("bizus").insertOne(data, function(err, res) {
         console.log('DATA', this.data)
           if (err) {
             console.log('4')

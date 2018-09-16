@@ -5,16 +5,12 @@ var Rank = (data) => {
     this.data = data
 }
 
-Rank.prototype = {
-    data: {}
-}
-
-Rank.prototype.save = (onSuccess, onError) => {
+Rank.prototype.save = (data, onSuccess, onError) => {
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("nodeData");
     
-        dbo.collection("ranks").insertOne(this.data, function(err, res) {
+        dbo.collection("ranks").insertOne(data, function(err, res) {
           if (err) {
             onError(err)
             throw err
