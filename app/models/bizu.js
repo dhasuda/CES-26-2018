@@ -31,7 +31,7 @@ Bizu.getAll = (onSuccess, onError) => {
             onError(err)
             throw err
         }
-        var dbo = db.db("mydb");
+        var dbo = db.db("nodeData");
         dbo.collection("bizus").find({}).toArray(function(err, result) {
         if (err) {
             onError(err)
@@ -51,7 +51,7 @@ Bizu.getBycreator = (creator, onSuccess, onError) => {
             onError(err)
             throw err
         }
-        var dbo = db.db("mydb");
+        var dbo = db.db("nodeData");
         var query = { creator: creator }
 
         dbo.collection("bizus").find(query).toArray(function(err, result) {
@@ -70,7 +70,7 @@ Bizu.getBySubject = (subject, onSuccess, onError) => {
         onError(err)
         throw err
     }
-    var dbo = db.db("mydb");
+    var dbo = db.db("nodeData");
     var query = { subject: subject }
 
     dbo.collection("bizus").find(query).toArray(function(err, result) {
@@ -88,7 +88,7 @@ Bizu.getAllWithRanks = (onSuccess, onError) => {
         onError(err)
         throw err
     }
-    var dbo = db.db("mydb");
+    var dbo = db.db("nodeData");
 
     dbo.collection("bizus").aggregate([
         { $lookup:
