@@ -25,8 +25,6 @@ Bizu.save = (data, onSuccess, onError) => {
 }
 
 Bizu.getAll = (onSuccess, onError) => {
-    
-
     MongoClient.connect(url, function(err, db) {
     
         if (err) {
