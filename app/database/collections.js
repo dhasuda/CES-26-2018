@@ -16,4 +16,10 @@ MongoClient.connect(url, function(err, db) {
     db.close();
   });
 
+  dbo.createCollection("ranks", function(err, res) {
+    if (err) throw err;
+    console.log("Ranks created!");
+    db.close();
+  });
+
 });
