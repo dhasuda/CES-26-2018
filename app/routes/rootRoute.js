@@ -8,6 +8,10 @@ const rootController = require('../controllers/rootController.js')
 router.get('/', rootController.firstPage)
 router.get('/register', rootController.registerPage)
 router.get('/database', rootController.database)
+router.get('/aboutus', rootController.renderAboutUs)
+router.get('/ranking', rootController.renderRanking)
+router.get('/uploadbizu', rootController.renderUpload)
+
 
 router.post('/login', rootController.loginUser)
 router.post('/login', rootController.renderWelcomePage)

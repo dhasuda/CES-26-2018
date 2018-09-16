@@ -23,6 +23,22 @@ exports.renderWelcomePage = (req, res) => {
   res.render('welcome.ejs', {user: req.user})
 }
 
+
+exports.renderAboutUs = (req, res) => {
+  console.log(req.user)
+  res.render('aboutus.ejs')
+}
+
+exports.renderRanking = (req, res) => {
+  console.log(req.user)
+  res.render('ranking.ejs')
+}
+
+exports.renderUpload = (req, res) => {
+  console.log(req.user)
+  res.render('uploadbizu.ejs')
+}
+
 exports.loginUser = (req, res, next) => {
 
   passport.authenticate('user', (err, user, info) => {
