@@ -9,7 +9,7 @@
 
 <body>
     <%- include('./nav.ejs') %>
-    <h2>How many stars bizu <%=idBizu%> deserve?</h2>
+    <h2>Quantas estrelas o bizu <%=idBizu%> merece?</h2>
     <form action="/postrank/<%=idBizu%>" method="post">
         <input type="radio" name="stars" value=1> 1<br>
         <input type="radio" name="stars" value=2> 2<br>
