@@ -16,5 +16,6 @@ router.get('/uploadbizu', rootController.renderUpload)
 router.post('/login', rootController.loginUser)
 router.post('/login', rootController.renderWelcomePage)
 router.post('/register', rootController.registerNewUser)
+router.post('/postbizu', rootController.postBizu)
 
 module.exports = router

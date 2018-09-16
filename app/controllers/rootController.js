@@ -1,4 +1,5 @@
 const passport = require('passport')
+var Bizu = require("../models/bizu")
 
 exports.firstPage = (req, res) => {
   // res.send('Hello, world')
@@ -37,6 +38,25 @@ exports.renderRanking = (req, res) => {
 exports.renderUpload = (req, res) => {
   console.log(req.user)
   res.render('uploadbizu.ejs')
+}
+
+exports.postBizu = (req, res) => {
+  console.log(req.user)
+  var bizu = new Bizu()
+  bizu.data = {
+    title: req.body.title,
+    text: String,
+    subject: String,
+    creator: String
+  }
+
+  bizu.save(() => {
+    
+  }, err => {
+    console.log(err)
+    res.redirect('/')
+  })
+  
 }
 
 exports.loginUser = (req, res, next) => {
