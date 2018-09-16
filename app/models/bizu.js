@@ -25,38 +25,46 @@ Bizu.save = (data, onSuccess, onError) => {
 }
 
 Bizu.getAll = (onSuccess, onError) => {
-    if (err) {
-        onError(err)
-        throw err
-    }
-    var dbo = db.db("mydb");
-    dbo.collection("bizus").find({}).toArray(function(err, result) {
-    if (err) {
-        onError(err)
-        throw err
-    }
-    console.log(result);
-    onSuccess(result)
-    db.close();
-  });
+    
+
+    MongoClient.connect(url, function(err, db) {
+    
+        if (err) {
+            onError(err)
+            throw err
+        }
+        var dbo = db.db("mydb");
+        dbo.collection("bizus").find({}).toArray(function(err, result) {
+        if (err) {
+            onError(err)
+            throw err
+        }
+        console.log(result);
+        onSuccess(result)
+        db.close();
+        })
+    })
 }
 
 Bizu.getBycreator = (creator, onSuccess, onError) => {
-    if (err) {
-        onError(err)
-        throw err
-    }
-    var dbo = db.db("mydb");
-    var query = { creator: creator }
+    
+    MongoClient.connect(url, function(err, db) {
+        if (err) {
+            onError(err)
+            throw err
+        }
+        var dbo = db.db("mydb");
+        var query = { creator: creator }
 
-    dbo.collection("bizus").find(query).toArray(function(err, result) {
-    if (err) {
-        onError(err)
-    }
-    console.log(result);
-    onSuccess(result)
-    db.close();
-  });
+        dbo.collection("bizus").find(query).toArray(function(err, result) {
+        if (err) {
+            onError(err)
+        }
+        console.log(result);
+        onSuccess(result)
+        db.close();
+        })
+    })
 }
 
 Bizu.getBySubject = (subject, onSuccess, onError) => {

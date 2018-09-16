@@ -32,7 +32,19 @@ exports.renderAboutUs = (req, res) => {
 
 exports.renderRanking = (req, res) => {
   console.log(req.user)
+  
+  var arrayBizus
+  Bizu.getAll( 
+    (arrayBizus) =>{
+      console.log('BIZU', arrayBizus)
+      res.render('ranking.ejs', {arrayBizus : arrayBizus})
+  } ,
+    (err) => {
+      console.log(err)
+      res.redirect('/')
+  })
   res.render('ranking.ejs')
+
 }
 
 exports.renderUpload = (req, res) => {

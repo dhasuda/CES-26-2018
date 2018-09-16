@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 
 <head>
-
+  <script type="text/javascript" src="../libs/jquery.js"></script>
 </head>
 
 <body>
   <h1>All time Top Bizus:</h1>
+  
+  <p><%=arrayBizus%></p>
+  <ul>
+   <!-- <% arrayBizus.forEach (bizu => { %>
+      <li>
+        <h3>Title: <%= bizu.title %></h3>
+        <h3>Subject: <%= bizu.subject %></h3>
+        <h3>Creator: <%= bizu.creator %></h3> 
+        <h3>Content:</h3><br>
+        <h4><%= bizu.text %></h4> 
+      </li>  
+    <% } ) %>-->
+  </ul>
+  <script scr="public/infinitescroll.js"></script>
 </body>
 
 </html>
