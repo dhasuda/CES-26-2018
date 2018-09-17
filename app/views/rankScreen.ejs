@@ -3,23 +3,22 @@
 <head>
     <script type="text/javascript" src="../libs/jquery.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="./public/css/nav.css">
-    <link rel="stylesheet" href="./public/css/ranking.css">
+    <link rel="stylesheet" href="/public/css/nav.css">
+    <link rel="stylesheet" href="/public/css/rankScreen.css">
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <%- include('./nav.ejs') %>
     
     <h2>Quantas estrelas o bizu <%=nome%> merece?</h2>
     <form action="/postrank/<%=idBizu%>" method="post">
-        <input type="radio" name="stars" value=1> 1<br>
-        <input type="radio" name="stars" value=2> 2<br>
-        <input type="radio" name="stars" value=3 checked> 3<br>
-        <input type="radio" name="stars" value=4> 4<br>
-        <input type="radio" name="stars" value=5> 5<br>
-        <input type="submit" value="Submit">
+        <input class="hey" type="radio" name="stars" value=1> <div class="input_text">1</div><br>
+        <input class="hey" type="radio" name="stars" value=2> <div class="input_text">2</div><br>
+        <input class="hey" type="radio" name="stars" value=3 checked> <div class="input_text">3</div><br>
+        <input class="hey" type="radio" name="stars" value=4> <div class="input_text">4</div><br>
+        <input class="hey" type="radio" name="stars" value=5> <div class="input_text">5</div><br>
+        <input class="someButton btn btn-primary" type="submit" value="Submit">
     </form>
     <button class="someButton btn btn-primary" type="button" onclick="location.href = '/ranking'" >Voltar</button>
 </body>
