@@ -46,8 +46,8 @@ exports.renderRanking = (req, res) => {
 }
 
 exports.renderRankScreen = (req, res) => {
-  console.log(req.user)
-  res.render('rankScreen.ejs', {idBizu : req.params.idBizu})
+  console.log(req.params)
+  res.render('rankScreen.ejs', {idBizu : req.params.idBizu, nome : req.params.name})
 }
 
 exports.renderUpload = (req, res) => {
@@ -73,12 +73,14 @@ exports.postBizu = (req, res) => {
 }
 
 exports.postRank = (req, res) => {
+  console.log('HEREEE')
   
   var data = {
     idBizu: req.params.idBizu,
     user: req.user._id,
     grade: req.body.stars
   }
+  console.log('DATA', data)
   
   Rank.save(data, () => {
     res.redirect('/ranking')

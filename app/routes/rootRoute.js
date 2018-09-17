@@ -11,7 +11,7 @@ router.get('/database', rootController.database)
 router.get('/aboutus', rootController.renderAboutUs)
 router.get('/ranking', rootController.renderRanking)
 router.get('/uploadbizu', rootController.renderUpload)
-router.get("/rankbizu/:idBizu", rootController.renderRankScreen)
+router.get("/rankbizu/:name/:idBizu", rootController.renderRankScreen)
 router.get('/welcome', rootController.renderWelcomePage)
 router.get('/logout', rootController.logout)
 
